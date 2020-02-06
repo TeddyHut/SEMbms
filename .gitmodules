@@ -1,3 +1,6 @@
 [submodule "BMS50A/SEMlibmodule"]
 	path = BMS50A/SEMlibmodule
 	url = https://github.com/TeddyHut/SEMlibmodule
+[submodule "BMS50A/SEMlibmicavr"]
+	path = BMS50A/SEMlibmicavr
+	url = https://github.com/TeddyHut/SEMlibmicavr
