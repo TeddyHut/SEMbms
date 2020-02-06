@@ -1,0 +1,3 @@
+[submodule "BMS50A/SEMlibmodule"]
+	path = BMS50A/SEMlibmodule
+	url = https://github.com/TeddyHut/SEMlibmodule
