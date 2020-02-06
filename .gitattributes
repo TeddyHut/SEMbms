@@ -1,0 +1,7 @@
+#Generated code
+*.atsln linguist-generated
+*.cppproj linguist-generated
+*.componentinfo.xml linguist-generated
+
+#Vendored code
+
