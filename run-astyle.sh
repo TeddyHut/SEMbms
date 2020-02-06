@@ -8,6 +8,11 @@
 # $copyfiles is COPY (cp) or MOVE (mv) the files
 # spaces ARE allowed in directory and file name (for Cygwin on Windows)
 
+# From https://stackoverflow.com/questions/59895/how-to-get-the-source-directory-of-a-bash-script-from-within-the-script-itself
+#if [ $( expr $( uname ) : "CYGWIN" ) -eq 6 ]; then
+
+#DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
 indir="src"
 outdir=".astyle"
 fileext=".orig"
@@ -35,7 +40,7 @@ if [ "$indir" == "$outdir" ]; then
 fi
 
 # optional statement to run Artistic Style
-./astyle  --options=".astylerc" -R  "$indir/*.cpp"  "$indir/*.h"
+$(dirname $0)/astyle  --options="$(dirname $0)/.astylerc" -R  "$indir/*.cpp"  "$indir/*.h"
 # if [ $? -ne 0 ] ; then  read -sn1 -p "Error executing astyle!"; fi
 
 # variables for fle processing
