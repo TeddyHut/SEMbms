@@ -36,15 +36,15 @@ namespace config
     ///@{
     constexpr float resistor_r1 = 24;
     constexpr float resistor_r2 = 10;
-#if (BOARD_NUMBER == 1)
-    constexpr float resistor_r37_r38 = 15.4;
-    constexpr float resistor_r55_r56 = 15.4;
-    constexpr float current_cutoff_sensor_1A = 0.9;
-#elif (BOARD_NUMBER == 2)
+#if (BOARD_NUMBER == 1) || (BOARD_NUMBER == 2)
+    constexpr float resistor_r7 = 15;
+    constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 15.4;
     constexpr float resistor_r55_r56 = 15.4;
     constexpr float current_cutoff_sensor_1A = 0.9;
 #elif (BOARD_NUMBER == 3)
+    constexpr float resistor_r7 = 15;
+    constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 15;
     constexpr float resistor_r55_r56 = 15;
     constexpr float current_cutoff_sensor_1A = 0.65;
