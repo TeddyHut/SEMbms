@@ -5,3 +5,7 @@
 
 #Vendored code
 
+#Binary files
+*.atsln binary
+*.cppproj binary
+
