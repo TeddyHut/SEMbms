@@ -166,8 +166,11 @@ void ui::printer::Current::print(char str[], uint8_t const len /*= 4*/) const
 }
 ui::printer::Current::Current(bms::sensor::CurrentOptimised *s) : s(s) {}
 
+libmodule::Timer1k ui::statdisplay::StatDisplay::print_timer;
+
 ui::statdisplay::StatDisplay::Screen_t *ui::statdisplay::StatDisplay::on_click()
 {
+    print_timer.finished = showing_name;
     showing_name = !showing_name;
     //If now showing name, copy stat_name into Item::name
     if(showing_name) {
@@ -181,10 +184,12 @@ ui::statdisplay::StatDisplay::Screen_t *ui::statdisplay::StatDisplay::on_click()
 void ui::statdisplay::StatDisplay::update()
 {
     //If showing statistic, print in the value
-    if(!showing_name) {
+    if(!showing_name && print_timer.finished) {
         //Zero out name before printing (prevents stray decimal point)
         memset(name, 0, sizeof name);
         stat_printer->print(name, sizeof name);
+        print_timer = 250;
+        print_timer.start();
     }
 }
 

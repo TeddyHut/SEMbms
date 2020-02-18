@@ -119,6 +119,9 @@ int main(void)
     ui_common.dp_right_blinker.pm_out = ui_common.segs.get_output_dp_right();
 
     //Setup sensors, printers, and statdisplays
+    //This pin goes to a MOSFET on the GND pin of the 75A current sensor. In the future it can be toggled to optimise power consumption.
+    libmicavr::PortOut output_75a_enable(PORTF, 6);
+    output_75a_enable.set(true);
     bms::snc::setup();
     ui::printer::setup();
     ui::statdisplay::setup();

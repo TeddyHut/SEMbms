@@ -16,7 +16,7 @@
  This number is marked using a sticker on each BMS PCB. Changing #BOARD_NUMBER will change the relevant resistor values in the code configuration.
  \todo When moving to C++17, make this use `constexpr if` instead (if relevant - might not be, need to investigate further)
 */
-#define BOARD_NUMBER 3
+#define BOARD_NUMBER 6
 /** \brief Whether or not the temperature condition should be enabled.
  \details This can be handy when programming/testing PCBs as the temperature board will not need to be connected.
  \todo Make it so that this is configurable on the BMS.
@@ -36,17 +36,29 @@ namespace config
     ///@{
     constexpr float resistor_r1 = 24;
     constexpr float resistor_r2 = 10;
-#if (BOARD_NUMBER == 1)
-    constexpr float resistor_r37_r38 = 15.4;
-    constexpr float resistor_r55_r56 = 15.4;
-    constexpr float current_cutoff_sensor_1A = 0.9;
-#elif (BOARD_NUMBER == 2)
+#if (BOARD_NUMBER == 1) || (BOARD_NUMBER == 2)
+    constexpr float resistor_r7 = 15;
+    constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 15.4;
     constexpr float resistor_r55_r56 = 15.4;
     constexpr float current_cutoff_sensor_1A = 0.9;
 #elif (BOARD_NUMBER == 3)
+    constexpr float resistor_r7 = 15;
+    constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 15;
     constexpr float resistor_r55_r56 = 15;
+    constexpr float current_cutoff_sensor_1A = 0.65;
+#elif (BOARD_NUMBER == 4) || (BOARD_NUMBER == 5)
+    constexpr float resistor_r7 = 13;
+    constexpr float resistor_r13 = 10;
+    constexpr float resistor_r37_r38 = 16;
+    constexpr float resistor_r55_r56 = 16;
+    constexpr float current_cutoff_sensor_1A = 0.65;
+#elif (BOARD_NUMBER == 6)
+    constexpr float resistor_r7 = 15;
+    constexpr float resistor_r13 = 11;
+    constexpr float resistor_r37_r38 = 16;
+    constexpr float resistor_r55_r56 = 16;
     constexpr float current_cutoff_sensor_1A = 0.65;
 #endif
     ///@}

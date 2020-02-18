@@ -73,6 +73,9 @@ namespace ui
     {
         //A list item used to display a statistic. When clicked toggles between the statistic name and the statistic value.
         struct StatDisplay : public libmodule::ui::segdpad::List::Item {
+            //print_timer is used instead of an average function until we get more program memory.
+            //It just adds a delay between printing values so that the user can read them if changing rapidly.
+            static libmodule::Timer1k print_timer;
             //Screen_t is introduced in Item as Screen<Common>;
             Screen_t *on_click() override;
             //Will call update

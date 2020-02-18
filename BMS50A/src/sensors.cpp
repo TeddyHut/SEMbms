@@ -33,7 +33,7 @@ namespace
 
 void bms::snc::setup()
 {
-    cellvoltage[0]    = new (&(mem_cellvoltage[0][0])) bms::sensor::CellVoltage(ADC_MUXPOS_AIN0_gc, 15.0f / (11.0f + 15.0f));
+    cellvoltage[0]    = new (&(mem_cellvoltage[0][0])) bms::sensor::CellVoltage(ADC_MUXPOS_AIN0_gc, config::resistor_r7 / (config::resistor_r7 + config::resistor_r13));
     cellvoltage[1]    = new (&(mem_cellvoltage[1][0])) bms::sensor::CellVoltage(ADC_MUXPOS_AIN1_gc, 16.0f / 30.0f);
     cellvoltage[2]    = new (&(mem_cellvoltage[2][0])) bms::sensor::CellVoltage(ADC_MUXPOS_AIN2_gc, 24.0f / 43.0f);
     cellvoltage[3]    = new (&(mem_cellvoltage[3][0])) bms::sensor::CellVoltage(ADC_MUXPOS_AIN3_gc, 33.0f / 62.0f);
