@@ -154,6 +154,8 @@ void bms::sensor::ACS_CurrentSensor::calibrate()
 bms::sensor::ACS_CurrentSensor::ACS_CurrentSensor(float const min_current, float const max_current)
     : sensor_current_min(min_current), sensor_current_max(max_current) {}
 
+//Note: For all current sensors, the ADC reference voltage is VDD (first cell, ADC_REFSEL_VDDREF_gc), not the internal 2.5V reference.
+//VREF_ADC0REFSEL_2V5_gc is there as a placeholder.
 bms::sensor::Current1A::Current1A(ADC_MUXPOS_t const muxpos)
     : ACS_CurrentSensor(-12.5, 12.5), ch_adc(muxpos, ADC_REFSEL_VDDREF_gc, VREF_ADC0REFSEL_2V5_gc, ADC_SAMPNUM_ACC64_gc) {}
 
