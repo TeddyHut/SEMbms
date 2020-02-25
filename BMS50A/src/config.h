@@ -41,7 +41,7 @@ namespace config
     constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 15.4;
     constexpr float resistor_r55_r56 = 15.4;
-    constexpr float current_cutoff_sensor_1A = 0.9;
+    constexpr float current_cutoff_sensor_1A = 0.8;
 #elif (BOARD_NUMBER == 3)
     constexpr float resistor_r7 = 15;
     constexpr float resistor_r13 = 11;
@@ -53,13 +53,13 @@ namespace config
     constexpr float resistor_r13 = 10;
     constexpr float resistor_r37_r38 = 16;
     constexpr float resistor_r55_r56 = 16;
-    constexpr float current_cutoff_sensor_1A = 0.65;
+    constexpr float current_cutoff_sensor_1A = 0.8;
 #elif (BOARD_NUMBER == 6)
     constexpr float resistor_r7 = 15;
     constexpr float resistor_r13 = 11;
     constexpr float resistor_r37_r38 = 16;
     constexpr float resistor_r55_r56 = 16;
-    constexpr float current_cutoff_sensor_1A = 0.65;
+    constexpr float current_cutoff_sensor_1A = 0.8;
 #endif
     ///@}
 
