@@ -512,7 +512,8 @@ void ui::MainMenu::ui_update()
 {
     if(runinit) {
         runinit = false;
-        auto menu_list = new libmodule::ui::segdpad::List;
+        //List with wrap enabled and enable_left disabled. The user must select an option.
+        auto menu_list = new libmodule::ui::segdpad::List(true, false);
         //3 menu items
         //  - Armed
         //  - Stats
