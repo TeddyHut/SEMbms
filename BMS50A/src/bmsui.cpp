@@ -516,11 +516,11 @@ void ui::MainMenu::ui_update()
         auto menu_list = new libmodule::ui::segdpad::List(true, false);
         //3 menu items
         //  - Armed
-        //  - Stats
-        //  - Settings
+        //  - Stats/sensor values (rE for 'read')
+        //  - Settings (SE for 'settings')
         strcpy(item_armed.name, "Ar");
-        strcpy(item_stats.name, "SA");
-        strcpy(item_settings.name, "St");
+        strcpy(item_stats.name, "rE");
+        strcpy(item_settings.name, "SE");
         menu_list->m_items.resize(3);
         menu_list->m_items[0] = &item_armed;
         menu_list->m_items[1] = &item_stats;
